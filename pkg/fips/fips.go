@@ -23,8 +23,8 @@ var libPaths = []string{"/lib64", "/usr/lib64", "/lib", "/usr/lib"}
 // SystemReport reports the value of
 // of a system property and possible related errors
 type SystemReport struct {
-	Value bool
-	Err   error
+	Value bool  `json:"value"`
+	Err   error `json:"error,omitempty"`
 }
 
 // FipsSystemReport describes whether FIPS is
@@ -33,15 +33,15 @@ type SystemReport struct {
 type FipsSystemReport struct {
 	// FipsMode is true if the host/container
 	// is currently running in FIPS mode, false othewise
-	FipsMode *SystemReport
+	FipsMode *SystemReport `json:"fipsEnabled"`
 	// CryptoLibsFips is true if the host/container
 	// OpenSSL crypto libraries are FIPS-capable
-	CryptoLibsFips *SystemReport
+	CryptoLibsFips *SystemReport `json:"cryptoLibFips"`
 	// FipsCompatibleGoBinary is true if a given
 	// Go binary has been compiled so that its
 	// stdlib crypto routines call into a FIPS-compliant
 	// crypto shared library
-	FipsCompatibleGoBinary *SystemReport
+	FipsCompatibleGoBinary *SystemReport `json:"goBinaryFips"`
 }
 
 func isHostRunningInFips() *SystemReport {
