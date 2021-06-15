@@ -21,8 +21,8 @@ var rootCmd = &cobra.Command{
 	Args:  cobra.MaximumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		goBinary := ""
-		if len(args) > 1 {
-			goBinary = args[1]
+		if len(args) > 0 {
+			goBinary = args[0]
 		}
 		fipsReport := fips.FipsSystemCheck(goBinary)
 
