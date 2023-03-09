@@ -14,6 +14,12 @@ Detect whether your system/container and your Golang binary are ready to run in 
 
 # Install
 
-just `go get github.com/acardace/fips-detect` and you're ready to go.
+Just `go get github.com/acardace/fips-detect`.
+
+Run `go build fips-detect.go`
+
+# Usage
+
+Run `./fips-detect <executable>`
 
 [Red Hat's Go toolset]: https://developers.redhat.com/blog/2019/06/24/go-and-fips-140-2-on-red-hat-enterprise-linux
