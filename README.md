@@ -14,9 +14,7 @@ Detect whether your system/container and your Golang binary are ready to run in 
 
 # Install
 
-Just `go get github.com/acardace/fips-detect`.
-
-Run `go build fips-detect.go`
+`go install github.com/acardace/fips-detect@latest`.
 
 # Usage
 
